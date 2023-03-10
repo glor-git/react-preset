@@ -1,5 +1,6 @@
 import React from "react";
 import RecoilProvider from "./RecoilProvider";
+import Query from "./Query";
 
 type Props = {
   children: React.ReactNode;
@@ -7,9 +8,11 @@ type Props = {
 
 const Provider: React.FC<Props> = ({ children }) => {
   return (
-    <RecoilProvider>
-      {children}
-    </RecoilProvider>
+    <Query>
+      <RecoilProvider>
+        {children}
+      </RecoilProvider>
+    </Query>
   );
 }
 
