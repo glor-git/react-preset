@@ -10,12 +10,12 @@ module.exports = {
     entry: "./src/index",
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: "bundle.js", // 번들파일 이름
+        filename: "bundle.js",
     },
     module: {
         rules: [
             {
-                test: /\\.(ts|js)x?$/,
+                test: /\.(ts|js)x?$/,
                 use: [
                     {
                         loader: "babel-loader",
@@ -24,16 +24,16 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\\.tsx?$/,
+                test: /\.tsx?$/,
                 use: ["ts-loader"],
                 exclude: /node_modules/,
             },
             {
-                test: /\\.css$/,
+                test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
             {
-                test: /\\.(png|jpe?g|gif|woff|woff2|ttf|svg|ico)$/i,
+                test: /\.(png|jpe?g|gif|woff|woff2|ttf|svg|ico)$/i,
                 use: [
                     {
                         loader: "file-loader",
