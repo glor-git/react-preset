@@ -135,7 +135,7 @@ if (!isLocal) {
 function getRoutes () {
     const files = glob.globSync("./src/pages/**/*.page.tsx");
     return files.reduce((routes, pagePath) => {
-        pagePath = pagePath.replace('./src/pages', '')
+        pagePath = pagePath.replace('src/pages/', '')
         let entry = pagePath.replace('./pages', '');
         const endFixPage = '.page.tsx';
         if (entry.endsWith(endFixPage)) {
@@ -148,7 +148,6 @@ function getRoutes () {
             entry = entry.slice(0, -6);
         }
         routes[entry] = pagePath;
-        console.log(routes)
         return routes;
     }, {});
 }
